@@ -1,0 +1,24 @@
+---
+title: Quarto Manuscript Default Project
+authors:
+  - name: Norah Jones
+    affiliation: The University
+    roles: writing
+    corresponding: true
+bibliography: references.bib
+jupyter: nbstata
+---
+
+## Section
+This is a simple placeholder for the manuscript's main document [@knuth84].
+
+This is a HTML document.
+
+
+```{stata}
+*| fig-cap: From code chunck
+*| echo: false
+
+qui webuse auto, clear
+scatter price mpg
+```
