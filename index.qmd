@@ -16,6 +16,7 @@ This is a HTML document.
 
 
 ```{stata}
+*| label: fig-figuretag1
 *| fig-cap: From code chunck
 *| echo: false
 
