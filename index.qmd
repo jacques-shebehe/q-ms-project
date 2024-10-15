@@ -12,13 +12,41 @@ jupyter: nbstata
 ## Section
 This is a simple placeholder for the manuscript's main document [@knuth84].
 
-This is a HTML document.
+The document fails to render once the below code chunk is labelled with `*| label: fig-figurelabel`.
 
 
 ```{stata}
+*| label: fig-figuretag1
 *| fig-cap: From code chunck
 *| echo: false
 
 qui webuse auto, clear
 scatter price mpg
+```
+
+The error message is:
+
+```
+Error running filter /Applications/quarto/share/filters/main.lua:
+Block, list of Blocks, or compatible element expected, got table
+        while retrieving function argument content
+        while retrieving arguments for function Div
+stack traceback:
+        /Applications/quarto/share/filters/main.lua:22368: in field 'render'
+        /Applications/quarto/share/filters/main.lua:1233: in local 'filter_fn'
+        /Applications/quarto/share/filters/main.lua:635: in function </Applications/quarto/share/filters/main.lua:625>
+        (...tail calls...)
+        [C]: in ?
+        [C]: in method 'walk'
+        /Applications/quarto/share/filters/main.lua:557: in function </Applications/quarto/share/filters/main.lua:546>
+        (...tail calls...)
+        /Applications/quarto/share/filters/main.lua:1334: in local 'callback'
+        /Applications/quarto/share/filters/main.lua:1352: in upvalue 'run_emulated_filter_chain'
+        /Applications/quarto/share/filters/main.lua:1388: in function </Applications/quarto/share/filters/main.lua:1385>
+stack traceback:
+        /Applications/quarto/share/filters/main.lua:557: in function </Applications/quarto/share/filters/main.lua:546>
+        (...tail calls...)
+        /Applications/quarto/share/filters/main.lua:1334: in local 'callback'
+        /Applications/quarto/share/filters/main.lua:1352: in upvalue 'run_emulated_filter_chain'
+        /Applications/quarto/share/filters/main.lua:1388: in function </Applications/quarto/share/filters/main.lua:1385>
 ```
